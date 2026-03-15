@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Aiyoh! | Old Chang Kee</title>
+    <style>
+        :root {
+            --ock-yellow: #FFD200;
+            --ock-red: #BE1E2D;
+            --ock-white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
+            background-color: var(--ock-yellow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            background-color: var(--ock-white);
+            padding: 30px 50px;
+            border-radius: 30px;
+            border: 6px solid var(--ock-red);
+            box-shadow: 15px 15px 0px rgba(0,0,0,0.1);
+            max-width: 450px;
+        }
+
+        .logo {
+            width: 220px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+            color: var(--ock-red);
+            line-height: 1;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 15px 0 25px 0;
+            color: #333;
+        }
+
+        #puff-container {
+            position: absolute;
+            width: 180px;
+            cursor: pointer;
+            z-index: 5;
+            transition: transform 0.1s ease;
+            /* Clipping mask to hide fake transparency checkerboard */
+            clip-path: ellipse(45% 35% at 50% 50%);
+            filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
+            transform: translate(-50%, -50%);
+        }
+
+        #puff-image {
+            width: 100%;
+            display: block;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            background: var(--ock-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(190, 30, 45, 0.4);
+        }
+
+        .hidden { display: none !important; }
+
+        #message {
+            font-weight: bold;
+            color: var(--ock-red);
+            margin-top: 10px;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="images/logo-old-chang-kee.gif" class="logo" alt="Old Chang Kee Logo">
+        
+        <h1>404</h1>
+        <p>Aiyoh! This page is "kosong".<br>Catch the puff to find the way back!</p>
+        
+        <a href="https://www.oldchangkee.com/" class="btn hidden" id="home-btn">Return to Homepage</a>
+        <div id="message"></div>
+    </div>
+
+    <div id="puff-container">
+        <img src="images/curry-puff.png" id="puff-image">
+    </div>
+
+    <script>
+        const puff = document.getElementById('puff-container');
+        const homeBtn = document.getElementById('home-btn');
+        const message = document.getElementById('message');
+        let clickCount = 0;
+
+        function movePuff() {
+            const padding = 120;
+            const x = Math.random() * (window.innerWidth - (padding * 2)) + padding;
+            const y = Math.random() * (window.innerHeight - (padding * 2)) + padding;
+            const rotation = Math.random() * 40 - 20;
+            
+            puff.style.left = `${x}px`;
+            puff.style.top = `${y}px`;
+            puff.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+        }
+
+        puff.addEventListener('mouseover', () => {
+            if (clickCount < 1) {
+                movePuff();
+                message.innerText = "Don't be shy! Click it!";
+            }
+        });
+
+        puff.addEventListener('click', () => {
+            clickCount++;
+            puff.style.transform = 'translate(-50%, -50%) scale(0) rotate(720deg)';
+            puff.style.opacity = '0';
+            
+            message.innerText = "Shiok! You found the snack.";
+            homeBtn.classList.remove('hidden');
+            
+            setTimeout(() => {
+                puff.classList.add('hidden');
+            }, 500);
+        });
+
+        movePuff();
+    </script>
+</body>
+</html>

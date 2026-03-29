@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bon Appetit Catering - Our Menu</title>
+
+    <style>
+        body{
+            background:#d9d9d9;
+            font-family: Arial, sans-serif;
+            margin:0;
+        }
+
+        #container{
+            width:600px;
+            margin:0 auto;
+            background:#d9d9d9;
+            border:2px solid black;
+        }
+
+        header{
+            background:#cfcfcf;
+            padding:25px 0;
+        }
+
+        #banner{
+            position:relative;
+        }
+
+        #banner img{
+            width:100%;
+            height:230px;
+            object-fit:cover;
+            display:block;
+        }
+
+        #banner-text{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            color:white;
+            font-size:3em;
+            text-align:center;
+        }
+
+        #menu-title{
+            text-align:center;
+            color:white;
+            font-size:2em;
+            padding:20px 0 10px 0;
+        }
+
+        #menu-grid{
+            width:90%;
+            margin:0 auto 30px auto;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:20px 20px;
+        }
+
+        .menu-card{
+            background:#d9d9d9;
+            border:2px solid black;
+            text-align:center;
+            padding:18px 10px;
+        }
+
+        .menu-card img{
+            width:90px;
+            height:90px;
+            object-fit:cover;
+            border-radius:50%;
+            display:block;
+            margin:0 auto 12px auto;
+        }
+
+        .menu-card h3{
+            margin:8px 0 5px 0;
+            font-size:1.2em;
+            font-weight:normal;
+        }
+
+        .menu-card p{
+            margin:4px 0;
+            font-size:1em;
+            line-height:1.3;
+        }
+
+        .price{
+            font-weight:normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+
+        <header></header>
+
+        <div id="banner">
+            <img src="images/cafe.jpg" alt="Cafe">
+            <div id="banner-text">Bon Appetit</div>
+        </div>
+
+        <div id="menu-title">Our Menu</div>
+
+        <div id="menu-grid">
+
+            <div class="menu-card">
+                <img src="images/bread-basket.png" alt="Bread Basket">
+                <h3>Bread Basket</h3>
+                <p>Assortment of fresh baked fruit breads and muffins</p>
+                <p class="price">$5.50</p>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/belgian-waffles.jpg" alt="Belgian Waffles">
+                <h3>Belgian Waffles</h3>
+                <p>Vanilla flavored batter with malted flour</p>
+                <p class="price">$7.50</p>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/scrambled-eggs.jpg" alt="Scrambled Eggs">
+                <h3>Scrambled Eggs</h3>
+                <p>Scrambled eggs, roasted red pepper and garlic, with green onions</p>
+                <p class="price">$7.50</p>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/blueberry-pancakes.jpg" alt="Blueberry Pancakes">
+                <h3>Blueberry Pancakes</h3>
+                <p>With syrup, butter and lots of berries</p>
+                <p class="price">$8.50</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

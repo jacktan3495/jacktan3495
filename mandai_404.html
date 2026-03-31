@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Lost in Mandai</title>
+    <style>
+        /* --- CSS STYLES --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #020b02; 
+            color: #ffffff;
+        }
+
+        /* LAYER 1: Local Background Image */
+        .jungle-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Updated to point to your local images folder */
+            background: url('images/background.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+            filter: brightness(0.4); 
+        }
+
+        /* LAYER 2: Flashlight Overlay */
+        #flashlight-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none; 
+            z-index: 10;
+            background: radial-gradient(
+                circle 200px at var(--cursor-x, 50%) var(--cursor-y, 50%),
+                transparent 0%,
+                rgba(0, 0, 0, 0.95) 80%,
+                rgba(0, 0, 0, 1) 100%
+            );
+        }
+
+        /* LAYER 3: Centered Content */
+        .content {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .text-header {
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 6rem;
+            margin: 0;
+            letter-spacing: 10px;
+            color: #d4e157; 
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .hidden-creature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .hidden-creature img {
+            width: 100%;
+            max-width: 750px; 
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid rgba(212, 225, 87, 0.4);
+            box-shadow: 0 0 50px rgba(0,0,0,0.7);
+        }
+
+        .hidden-creature p {
+            font-style: italic;
+            background: rgba(0,0,0,0.7);
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-top: 15px;
+            border: 1px solid #d4e157;
+            pointer-events: auto;
+        }
+
+        .btn-back {
+            padding: 15px 40px;
+            background-color: #43a047;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            pointer-events: auto;
+        }
+
+        .btn-back:hover {
+            background-color: transparent;
+            border: 2px solid #d4e157;
+            color: #d4e157;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="jungle-bg"></div>
+    <div id="flashlight-overlay"></div>
+
+    <div class="content">
+        <div class="text-header">
+            <h1>404</h1>
+            <h2>Lost in the Jungle?</h2>
+        </div>
+        
+        <div class="hidden-creature">
+            <img src="images/pangolin.jpg" alt="Sunda Pangolin">
+            <p>You found a rare Sunda Pangolin!</p>
+        </div>
+
+        <a href="https://www.mandai.com/en/singapore-zoo.html" class="btn-back">Back to Mandai Zoo Entrance</a>
+    </div>
+
+    <script>
+        const overlay = document.getElementById('flashlight-overlay');
+
+        const moveFlashlight = (e) => {
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+            if (clientX && clientY) {
+                const x = (clientX / window.innerWidth) * 100;
+                const y = (clientY / window.innerHeight) * 100;
+                overlay.style.setProperty('--cursor-x', x + '%');
+                overlay.style.setProperty('--cursor-y', y + '%');
+            }
+        };
+
+        document.addEventListener('mousemove', moveFlashlight);
+        document.addEventListener('touchmove', moveFlashlight);
+    </script>
+
+</body>
+</html>

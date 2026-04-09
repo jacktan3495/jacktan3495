@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Newsletter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+
+        body{
+            margin:0;
+            padding:0;
+            background:#ffffff;
+            color:#222222;
+            font-family:Arial, Helvetica, sans-serif;
+            text-align:center;
+        }
+
+        p{
+            margin:0;
+        }
+
+        .tiny{
+            font-size:0.8em;
+        }
+
+        .top-note{
+            margin:8px 0 10px;
+        }
+
+        #container{
+            width:600px;
+            margin:0 auto;
+            background:aliceblue;
+        }
+
+        header{
+            background:aliceblue;
+            padding:18px 0 16px;
+        }
+
+        header img{
+            width:205px;
+            display:block;
+            margin:0 auto;
+        }
+
+        #hero{
+            width:600px;
+            height:400px;
+            padding:28px 26px 0;
+            text-align:left;
+            background:url("sky.jpg") center center / cover no-repeat;
+        }
+
+        .highlight{
+            font-family:"Lemon", serif;
+            color:darkorange;
+        }
+
+        h1.highlight{
+            margin:0;
+            width:320px;
+            font-size:2.2em;
+            line-height:1.18;
+            text-shadow:2px 2px 0 rgba(0,0,0,0.55);
+        }
+
+        .white{
+            color:whitesmoke;
+        }
+
+        .reference{
+            margin-top:26px;
+            font-size:0.95em;
+            font-weight:700;
+        }
+
+        #message{
+            width:455px;
+            margin:70px 0 0 105px;
+            padding:5px 10px;
+            border-radius:10px;
+            font-size:0.8em;
+            line-height:1.5em;
+            background:rgba(213,223,223,0.88);
+            color:#222222;
+        }
+
+        #message p + p{
+            margin-top:12px;
+        }
+
+        #stats{
+            display:flex;
+            justify-content:center;
+            gap:16px;
+            padding:30px 0 20px;
+        }
+
+        .cell{
+            width:110px;
+            height:174px;
+            padding:15px 8px 8px;
+            background:powderblue;
+            border:2px ridge cadetblue;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        .cell img{
+            width:58px;
+            height:58px;
+            object-fit:contain;
+            display:block;
+            margin:0 auto 18px;
+        }
+
+        .cell strong.highlight{
+            display:block;
+            font-size:1.75em;
+            line-height:1;
+            text-shadow:1px 1px 2px rgba(0,0,0,0.35);
+            margin-bottom:8px;
+        }
+
+        .label{
+            font-size:0.85em;
+            line-height:1.15;
+        }
+
+        footer{
+            background:#36a7c2;
+            padding:18px 0;
+        }
+
+        footer p{
+            color:whitesmoke;
+            font-size:0.8em;
+            font-weight:700;
+        }
+    </style>
+</head>
+<body>
+    <p class="tiny top-note">Unable to view the email below? View it <a href="#">online here</a> instead</p>
+
+    <div id="container">
+        <header>
+            <a href="https://www.sparrow.se/en/" target="_blank" rel="noopener noreferrer">
+                <img src="sparrow.PNG" alt="Sparrow Air logo">
+            </a>
+        </header>
+
+        <section id="hero">
+            <h1 class="highlight">Here's your carbon offset receipt</h1>
+            <p class="reference white">Reference no. SPRW888</p>
+
+            <div id="message">
+                <p>Thank you for offsetting your share of carbon emissions and flying carbon neutral with the Sparrow Air Carbon Offset Programme.</p>
+                <p>Your contribution is now on its way to support a portfolio of accredited carbon offset projects across Asia.</p>
+            </div>
+        </section>
+
+        <section id="stats">
+            <div class="cell">
+                <img src="passenger.png" alt="Passenger icon">
+                <strong class="highlight">4</strong>
+                <div class="label">passengers</div>
+            </div>
+
+            <div class="cell">
+                <img src="gauge.png" alt="Gauge icon">
+                <strong class="highlight">1800+</strong>
+                <div class="label">miles</div>
+            </div>
+
+            <div class="cell">
+                <img src="ton.png" alt="Weight icon">
+                <strong class="highlight">2.2</strong>
+                <div class="label">tons of C.O<sup>2</sup></div>
+            </div>
+
+            <div class="cell">
+                <img src="leaf.png" alt="Leaf icon">
+                <strong class="highlight">16</strong>
+                <div class="label">trees planted</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Copyright 2023</p>
+        </footer>
+    </div>
+</body>
+</html>

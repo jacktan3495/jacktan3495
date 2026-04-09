@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandai Night Safari - 404 Error</title>
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        :root {
+            cursor: none;
+            --cursorX: 50vw;
+            --cursorY: 50vh;
+        }
+
+        body:before {
+            content: '';
+            display: block;
+            width: 100%; height: 100%;
+            position: fixed;
+            top: 0; left: 0;
+            pointer-events: none;
+            z-index: 10; 
+            background: radial-gradient(
+                circle 15.6vmax at var(--cursorX) var(--cursorY),
+                rgba(255, 255, 255, 0.5) 0%,   
+                rgba(255, 255, 255, 0) 45%,    
+                rgba(0,0,0,0.98) 75%,          
+                rgba(0,0,0,1) 100%             
+            );
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            font-family: Georgia, 'Times New Roman', serif, sans-serif;
+            background-color: #020b02;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .jungle-bg {
+            position: absolute;
+            width: 100%; height: 100%;
+            background: url('images/background.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: 1; 
+            filter: brightness(0.2);
+        }
+
+        .page-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            position: relative;
+            z-index: 20; 
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        header h1 {
+            font-size: 7rem;
+            margin: 0;
+            font-weight: bold;
+            color: #d4e157;
+            letter-spacing: 8px;
+            text-shadow: 0 1px 0 #9caf00, 0 2px 0 #8a9b00, 0 3px 0 #788700, 0 4px 0 #667300, 0 5px 0 #545f00, 0 10px 10px rgba(0,0,0,0.2);
+        }
+
+        header h2 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 2px 2px 0px #43a047, 4px 4px 15px rgba(0,0,0,0.8);
+        }
+
+        /* SUPER SLOW BREATHING HINT (8s duration) */
+        .hint-text {
+            font-size: 1rem;
+            color: #d4e157; 
+            margin: 35px auto; 
+            max-width: 600px;
+            padding: 12px 25px;
+            background: rgba(0, 0, 0, 0.85); 
+            border: 2px solid #d4e157;
+            border-radius: 8px;
+            font-style: italic;
+            display: inline-block;
+            /* Slowed to 8 seconds for a "calmer" feel */
+            animation: pulse-grow-huge 8s infinite ease-in-out;
+        }
+
+        @keyframes pulse-grow-huge {
+            0%, 100% { 
+                box-shadow: 0 0 5px rgba(212, 225, 87, 0.2); 
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% { 
+                box-shadow: 0 0 50px rgba(212, 225, 87, 1); 
+                transform: scale(1.3); /* 30% larger */
+                color: #ffffff;
+                border-color: #ffffff;
+                opacity: 1;
+            }
+        }
+
+        .safari-grid {
+            position: relative;
+            z-index: 5; 
+            max-width: 800px;
+            margin: 0 auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly; 
+        }
+
+        .animal-card {
+            background: rgba(15, 30, 15, 0.98);
+            border: 2px solid #d4e157;
+            padding: 10px;
+            text-align: center;
+            margin: 5px;
+            height: 220px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .animal-img {
+            width: 70px; height: 70px;
+            margin-bottom: 8px;
+            border: 2px solid #d4e157;
+        }
+
+        .fact-text { font-size: 0.8rem; color: #d4e157; }
+
+        footer { position: fixed; bottom: 30px; left: 30px; z-index: 5; }
+
+        .btn-home {
+            background-color: #43a047;
+            color: white;
+            width: 120px; height: 120px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50%; 
+            border: 2px solid #d4e157;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            pointer-events: auto; 
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-home:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <div class="jungle-bg"></div>
+
+    <audio id="jungleAudio" loop preload="auto">
+        <source src="images/jungle.wav.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="page-wrapper">
+        <header>
+            <h1>404</h1>
+            <h2>Oops! You've wandered off the trail.</h2>
+            <p class="hint-text">The way back to Mandai Zoo is hidden here... use your flashlight to explore the night.</p>
+        </header>
+
+        <main class="safari-grid">
+            <div class="w3-row">
+                <div class="w3-half">
+                    <div class="w3-card animal-card w3-round-large">
+                        <img src="images/leopard.jpg" class="w3-circle animal-img" alt="Leopard">
+                        <h3 class="w3-small w3-bold">Clouded Leopard</h3>
+                        <p class="fact-text">Did you know..... canine teeth as long as your thumb!</p>
+                    </div>
+                </div>
+                <div class="w3-half">
+                    <div class="w3-card animal-card w3-round-large">
+                        <img src="images/pangolin.jpg" class="w3-circle animal-img" alt="Pangolin">
+                        <h3 class="w3-small w3-bold">Sunda Pangolin</h3>
+                        <p class="fact-text">Did you know..... covered in armor-like keratin scales!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-row">
+                <div class="w3-half">
+                    <div class="w3-card animal-card w3-round-large">
+                        <img src="images/tasmanian_devil.jpg" class="w3-circle animal-img" alt="Tasmanian Devil">
+                        <h3 class="w3-small w3-bold">Tasmanian Devil</h3>
+                        <p class="fact-text">Did you know..... a bite stronger than a tiger's!</p>
+                    </div>
+                </div>
+                <div class="w3-half">
+                    <div class="w3-card animal-card w3-round-large">
+                        <img src="images/tiger.jpg" class="w3-circle animal-img" alt="Tiger">
+                        <h3 class="w3-small w3-bold">Malayan Tiger</h3>
+                        <p class="fact-text">Did you know..... their stripes are like unique fingerprints!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <a href="https://www.mandai.com/en/singapore-zoo.html" class="btn-home">Return to Mandai Zoo</a>
+        </footer>
+    </div>
+
+    <script>
+        const audio = document.getElementById('jungleAudio');
+        let isStarted = false;
+
+        function updateCursor(e) {
+            var x = e.clientX || (e.touches && e.touches[0].clientX);
+            var y = e.clientY || (e.touches && e.touches[0].clientY);
+            document.documentElement.style.setProperty('--cursorX', x + 'px');
+            document.documentElement.style.setProperty('--cursorY', y + 'px');
+        }
+
+        function initAudio() {
+            if (isStarted) return;
+            
+            audio.play().then(() => {
+                isStarted = true;
+                console.log("Audio playing!");
+                // Clear triggers
+                ["click", "mousemove", "touchstart"].forEach(ev => {
+                    window.removeEventListener(ev, initAudio);
+                });
+            }).catch(e => {
+                console.log("Audio block: Click the page once.");
+            });
+        }
+
+        document.addEventListener('mousemove', updateCursor);
+        document.addEventListener('touchmove', updateCursor);
+        
+        // Listen for the very first interaction
+        window.addEventListener('click', initAudio);
+        window.addEventListener('mousemove', initAudio);
+        window.addEventListener('touchstart', initAudio);
+    </script>
+</body>
+</html>

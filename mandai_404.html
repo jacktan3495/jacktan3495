@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandai Night Safari - 404 Error</title>
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            cursor: none;
+            --cursorX: 50vw;
+            --cursorY: 50vh;
+        }
+
+        /* THE DARKNESS MASK (Level 10) */
+        body:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 10; 
+            background: radial-gradient(
+                circle 12vmax at var(--cursorX) var(--cursorY),
+                rgba(255, 255, 255, 0.5) 0%,   
+                rgba(255, 255, 255, 0) 45%,    
+                rgba(0,0,0,0.98) 75%,          
+                rgba(0,0,0,1) 100%             
+            );
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #020b02;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .jungle-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('images/background.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: 1; 
+            filter: brightness(0.2);
+        }
+
+        .page-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 3D HEADER STYLING (Level 20) */
+        header {
+            position: relative;
+            z-index: 20; 
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        header h1 {
+            font-size: 8rem; /* Made larger for impact */
+            margin: 0;
+            font-weight: 900;
+            color: #d4e157;
+            letter-spacing: 5px;
+            /* Multi-layered text shadow for 3D depth */
+            text-shadow: 
+                0 1px 0 #bbb,
+                0 2px 0 #aaa,
+                0 3px 0 #999,
+                0 4px 0 #888,
+                0 5px 0 #777,
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+        }
+
+        header h2 {
+            font-size: 2.2rem;
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            /* Subtler 3D depth for h2 */
+            text-shadow: 
+                2px 2px 0px #43a047, 
+                4px 4px 15px rgba(0,0,0,0.8);
+        }
+
+        /* SAFARI GRID: Level 5 UNDER the darkness */
+        .safari-grid {
+            position: relative;
+            z-index: 5; 
+            max-width: 850px;
+            margin: auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .animal-card {
+            background: rgba(15, 30, 15, 0.98);
+            border: 2px solid #d4e157;
+            padding: 15px;
+            text-align: center;
+            margin: 10px;
+            height: 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .animal-img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 8px;
+            border: 2px solid #d4e157;
+        }
+
+        .fact-text {
+            font-size: 0.75rem;
+            color: #d4e157;
+        }
+
+        footer {
+            position: relative;
+            z-index: 5; 
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+        .btn-home {
+            background-color: #43a047;
+            color: white;
+            padding: 12px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            border: 2px solid #d4e157;
+            display: inline-block;
+            pointer-events: auto; 
+            transition: 0.3s;
+        }
+
+        .btn-home:hover {
+            background-color: #d4e157;
+            color: #020b02;
+            transform: translateY(-3px); /* 3D movement on hover */
+            box-shadow: 0 5px 15px rgba(212, 225, 87, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="jungle-bg"></div>
+
+    <div class="page-wrapper">
+        <header>
+            <h1>404</h1>
+            <h2>Oops! You've wandered off the trail.</h2>
+        </header>
+
+        <main class="safari-grid">
+            <div class="w3-row">
+                <div class="w3-half">
+                    <div class="w3-card animal-card w3-round-large">
+                        <img src="images/leopard.jpg" class="w3-circle animal-img" alt="Leopard">
+                        <h3 class="w3-small w3-bold">Clouded Leopard</h3>
+                        <p class="fact-text">Did you know..... they have the longest canine teeth of any living feline!</p>
+                    </div>
+                </div>
+                <div class="w3-half">
+                    <div class="w3-card animal-card w3-round-large">
+                        <img src="images/pangolin.jpg" class="w3-circle animal-img" alt="Pangolin">
+                        <h3 class="w3-small w3-bold">Sunda Pangolin</h3>
+                        <p class="fact-text">Did you know..... they are the only mammals covered in keratin scales!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-row">
+                <div class="w3-half">
+                    <div class="w3-card animal-card w3-round-large">
+                        <img src="images/tasmanian_devil.jpg" class="w3-circle animal-img" alt="Tasmanian Devil">
+                        <h3 class="w3-small w3-bold">Tasmanian Devil</h3>
+                        <p class="fact-text">Did you know..... they have one of the most powerful bites in the world!</p>
+                    </div>
+                </div>
+                <div class="w3-half">
+                    <div class="w3-card animal-card w3-round-large">
+                        <img src="images/tiger.jpg" class="w3-circle animal-img" alt="Tiger">
+                        <h3 class="w3-small w3-bold">Malayan Tiger</h3>
+                        <p class="fact-text">Did you know..... no two tigers have the same unique stripe patterns!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <a href="https://www.mandai.com/en/singapore-zoo.html" class="btn-home">Return to Mandai Zoo</a>
+        </footer>
+    </div>
+
+    <script>
+        function move(e) {
+            var x = e.clientX || (e.touches && e.touches[0].clientX);
+            var y = e.clientY || (e.touches && e.touches[0].clientY);
+            document.documentElement.style.setProperty('--cursorX', x + 'px');
+            document.documentElement.style.setProperty('--cursorY', y + 'px');
+        }
+        document.addEventListener('mousemove', move);
+        document.addEventListener('touchmove', move);
+    </script>
+</body>
+</html>
